@@ -7,5 +7,8 @@
     published on {{ post.published_date }} by {{ post.author }}
   </p>
   <p class="post__content">{{ post.text | linebreaksbr }}</p>
+  <a class="post__date" href="{% url 'post_detail' pk=post.pk %}"
+    >💌Comments: {{ post.approved_comments.count }}</a
+  >
 </div>
 {% endfor %} {% endblock %}

@@ -4,11 +4,39 @@
   {% if post.published_date %}
   <div class="post__date">
     {{ post.published_date }}
-    {% if user.is_authenticated %}
+    {% else %}
+    <a class="post__button--publish" href="{% url 'post_publish' pk=post.pk %}">
+      Publish
+    </a>
+    {% endif %} {% if user.is_authenticated %}
     <a class="post__button--edit" href="{% url 'post_edit' pk=post.pk %}">✍️</a>
+    <a class="post__button--edit" href="{% url 'post_remove' pk=post.pk %}">
+      🗑️
+    </a>
     {% endif %}
   </div>
-  {% endif %}
   <p class="post__content">{{ post.text | linebreaksbr }}</p>
 </div>
-{% endblock %}
+<hr />
+<h2>Comments</h2>
+<div class="post__button--addcomment">
+  <a href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+</div>
+
+{% for comment in post.comments.all %} 
+{% if user.is_authenticated or comment.approved_comment %}
+<div>
+  <div class="post__date">
+    <strong>{{ comment.author }}</strong> at {{ comment.created_date }}
+  </div>
+  {% if not comment.approved_comment %}
+  <a href="{% url 'comment_remove' pk=comment.pk %}">🗑️</a>
+  <a href="{% url 'comment_approve' pk=comment.pk %}">✅</a>
+  {% endif %}
+    </div>
+
+  <div class="post__content">{{ comment.text | linebreaks }}</div>
+</div>
+{% endif %} {% empty %}
+<p>No comments here yet 😔</p>
+{% endfor %} {% endblock %}

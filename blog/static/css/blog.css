@@ -9,10 +9,14 @@ body {
 h2 a,
 h2 {
   color: darkgreen;
-  text-decoration: none;
   margin-left: 0.75em;
   margin-bottom: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+hr {
+  margin: 3em;
+  border: 0.5px solid burlywood;
 }
 
 .post__date {
@@ -21,14 +25,25 @@ h2 {
   margin-left: 4em;
 }
 
+a {
+  text-decoration: none;
+}
+
 .post__header {
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: palevioletred;
   padding: 1em;
 }
+
+.post__header p {
+  font-size: 0.4em;
+  font-weight: 100;
+  color: white;
+  margin: 0;
+}
+
 .post__header a {
   color: white;
-  text-decoration: none;
 }
 
 .post__content {
@@ -40,7 +55,6 @@ h2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: darkgreen;
   color: white;
-  text-decoration: none;
   position: absolute;
   right: 0;
   padding: 0.25em;
@@ -63,11 +77,36 @@ h2 {
   text-decoration: none;
 }
 
+.post__button--drafts {
+  font-size: 1.5em;
+  position: absolute;
+  right: 10px;
+  top: 150px;
+}
+
+.post__button--publish {
+  margin-left: 1em;
+  background-color: palevioletred;
+  color: white;
+  padding: 0.25em;
+}
+
+.post__button--header {
+  font-size: 0.75em;
+  margin-bottom: 1em;
+}
+
 .post__form {
   margin: 2em;
   display: flex;
   flex-direction: column;
   width: 50%;
+}
+
+.post__header--buttons {
+  right: 10px;
+  position: absolute;
+  text-align: right;
 }
 
 label {
@@ -79,4 +118,15 @@ textarea {
   width: 100%;
   border: 1px solid black;
   min-height: 2em;
+}
+
+.post__button--addcomment {
+  margin: 1.5em;
+}
+
+.post__button--addcomment a {
+  background: burlywood;
+  color: white;
+  padding: 0.5em;
+  font-size: 0.75em;
 }

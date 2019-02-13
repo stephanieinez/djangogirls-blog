@@ -8,7 +8,7 @@ h2 a,
 h2 {
   color: darkgreen;
   text-decoration: none;
-  margin-left: 1em;
+  margin-left: 0.75em;
   margin-bottom: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -32,4 +32,49 @@ h2 {
 .post__content {
   margin-left: 3em;
   margin-right: 1.5em;
+}
+
+.post__button--new {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: darkgreen;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+  padding: 0.25em;
+}
+
+.post__button--submit {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: darkgreen;
+  color: white;
+  border: none;
+  padding: 0.5em;
+  width: 20%;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.post__button--edit {
+  margin-left: 1em;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.post__form {
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+label {
+  color: palevioletred;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid black;
+  min-height: 2em;
 }

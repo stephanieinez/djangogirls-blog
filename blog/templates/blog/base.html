@@ -7,6 +7,9 @@
   <body>
     <div>
       <h1 class="post__header"><a href="/">Django Blog ✨</a></h1>
+      {% if user.is_authenticated %}
+      <a href="{% url 'post_new' %}" class="post__button--new">+ New Post</a>
+      {% endif %}
     </div>
 
     <div>

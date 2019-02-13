@@ -28,12 +28,12 @@
 <div>
   <div class="post__date">
     <strong>{{ comment.author }}</strong> at {{ comment.created_date }}
-  </div>
   {% if not comment.approved_comment %}
   <a href="{% url 'comment_remove' pk=comment.pk %}">🗑️</a>
   <a href="{% url 'comment_approve' pk=comment.pk %}">✅</a>
+  </div>
   {% endif %}
-    </div>
+  </div>
 
   <div class="post__content">{{ comment.text | linebreaks }}</div>
 </div>

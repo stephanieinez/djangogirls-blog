@@ -16,7 +16,9 @@
           <p>Hola {{ user.username }} <a href="{% url 'logout' %}">🔓</a></p>
         </div>
         {% else %}
-        <div><a href="{% url 'login' %}">🔒</a></div>
+        <div class="post__header--buttons">
+          <a href="{% url 'login' %}" class="post__button--header">🔒</a>
+        </div>
         {% endif %}
         <a href="/">Django Blog ✨</a>
       </h1>
